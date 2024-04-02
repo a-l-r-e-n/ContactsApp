@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ContactsApp;
+
 namespace ContactsAppUI
 {
     public partial class Form1 : Form
