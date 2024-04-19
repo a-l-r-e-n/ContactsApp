@@ -17,6 +17,10 @@ namespace ContactsAppUI
         public MainForm()
         {
             InitializeComponent();
+
+            PhoneNumber phoneNumber = new PhoneNumber(79131232334);
+            Contact contact = new Contact("Иванов","Иван",phoneNumber,DateTime.Now,"почта","вк");
+                       
         }
     }
 }
