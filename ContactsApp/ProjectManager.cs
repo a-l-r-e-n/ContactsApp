@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Xml;
-
 
 
 namespace ContactsApp
@@ -13,39 +11,78 @@ namespace ContactsApp
     public class ProjectManager
     {
         /// <summary>
-        /// Путь к файлу.
+        /// Имя файла.
         /// </summary>
-        private const string _fileSave = "..\\My Documents\\ContactApp.notes";
+        private static string _fileName = @"\ContactsApp.txt";
 
         /// <summary>
-        /// Сохранить контакт в файл.
+        /// Путь к AppData.
         /// </summary>
-        public static void SaveToFile(Contact data, string filename)
+        private static string _appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+        /// <summary>
+        /// Путь к папке сохранения.
+        /// </summary>
+        private static string _path = $@"{_appData}\ContactsApp";
+
+        /// <summary>
+        /// Возвращает путь к папке сохранения.
+        /// </summary>
+        public string Path
         {
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter sw = new StreamWriter(_fileSave + filename))
-            using (JsonWriter writer = new JsonTextWriter(sw))
+            get
             {
-                serializer.Serialize(writer, data);
+                return _path;
             }
         }
 
         /// <summary>
-        /// Загрузить проект из файла.
+        /// Возвращает имя файла.
         /// </summary>
-        /// <param name="filename"></param>
+        public string FileName
+        {
+            get
+            {
+                return _fileName;
+            }
+        }
+
+        /// <summary>
+        /// Сохранить данные в файл.
+        /// </summary>
+        /// <param name="project"></param>
+        public void SaveProject(Project project)
+        {
+            if (!Directory.Exists(Path))
+            {
+                Directory.CreateDirectory(Path);
+            }
+            string json = JsonConvert.SerializeObject(project, Formatting.Indented);
+            File.WriteAllText(Path + FileName, json);
+        }
+
+        /// <summary>
+        /// Загрузить данные из файла.
+        /// </summary>
         /// <returns></returns>
-        public static Contact LoadFromFile(string filename)
+        public Project LoadProject()
         {
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamReader sr = new StreamReader(_fileSave + filename))
-            using (JsonReader reader = new JsonTextReader(sr))
+            try
             {
-                return (Contact)serializer.Deserialize<Contact>(reader);
+                Project project;
+                string json = File.ReadAllText(Path + FileName);
+                project = JsonConvert.DeserializeObject<Project>(json);
+                if (project == null)
+                {
+                    return new Project();
+                }
+                return project;
+            }
+            catch (Exception)
+            {
+                return new Project();
             }
         }
-
-
     }
 
 }

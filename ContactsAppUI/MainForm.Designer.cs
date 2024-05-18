@@ -40,7 +40,7 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.SernameLabel = new System.Windows.Forms.Label();
             this.BirthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ContactListPanel = new System.Windows.Forms.Panel();
             this.ContactsScrollBar = new System.Windows.Forms.VScrollBar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.EditContactPictureBox = new System.Windows.Forms.PictureBox();
@@ -49,20 +49,20 @@
             this.ContactsListBox = new System.Windows.Forms.ListBox();
             this.FindTextBox = new System.Windows.Forms.TextBox();
             this.FindLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ContactInfoPanel = new System.Windows.Forms.Panel();
+            this.TodaysBirthdaysPanel = new System.Windows.Forms.Panel();
+            this.TodaysBirthdaysPictureBox = new System.Windows.Forms.PictureBox();
+            this.BirthdayContactLabel = new System.Windows.Forms.Label();
             this.BirthdaysLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.ContactListPanel.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditContactPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteContactPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddContactPictureBox)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.ContactInfoPanel.SuspendLayout();
+            this.TodaysBirthdaysPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TodaysBirthdaysPictureBox)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,18 +172,18 @@
             this.BirthdayDateTimePicker.Size = new System.Drawing.Size(144, 20);
             this.BirthdayDateTimePicker.TabIndex = 4;
             // 
-            // panel1
+            // ContactListPanel
             // 
-            this.panel1.Controls.Add(this.ContactsScrollBar);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.ContactsListBox);
-            this.panel1.Controls.Add(this.FindTextBox);
-            this.panel1.Controls.Add(this.FindLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 450);
-            this.panel1.TabIndex = 16;
+            this.ContactListPanel.Controls.Add(this.ContactsScrollBar);
+            this.ContactListPanel.Controls.Add(this.panel5);
+            this.ContactListPanel.Controls.Add(this.ContactsListBox);
+            this.ContactListPanel.Controls.Add(this.FindTextBox);
+            this.ContactListPanel.Controls.Add(this.FindLabel);
+            this.ContactListPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ContactListPanel.Location = new System.Drawing.Point(0, 0);
+            this.ContactListPanel.Name = "ContactListPanel";
+            this.ContactListPanel.Size = new System.Drawing.Size(281, 450);
+            this.ContactListPanel.TabIndex = 16;
             // 
             // ContactsScrollBar
             // 
@@ -266,54 +266,54 @@
             this.FindLabel.TabIndex = 9;
             this.FindLabel.Text = "Find";
             // 
-            // panel2
+            // ContactInfoPanel
             // 
-            this.panel2.Controls.Add(this.EmailLabel);
-            this.panel2.Controls.Add(this.SernameLabel);
-            this.panel2.Controls.Add(this.NameLabel);
-            this.panel2.Controls.Add(this.BirthdayDateTimePicker);
-            this.panel2.Controls.Add(this.EmailTextBox);
-            this.panel2.Controls.Add(this.IdVkTextBox);
-            this.panel2.Controls.Add(this.BirthDayLabel);
-            this.panel2.Controls.Add(this.NameTextBox);
-            this.panel2.Controls.Add(this.PhoneLabel);
-            this.panel2.Controls.Add(this.PhoneTextBox);
-            this.panel2.Controls.Add(this.IdVkLabel);
-            this.panel2.Controls.Add(this.SernameTextBox);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(465, 349);
-            this.panel2.TabIndex = 16;
+            this.ContactInfoPanel.Controls.Add(this.EmailLabel);
+            this.ContactInfoPanel.Controls.Add(this.SernameLabel);
+            this.ContactInfoPanel.Controls.Add(this.NameLabel);
+            this.ContactInfoPanel.Controls.Add(this.BirthdayDateTimePicker);
+            this.ContactInfoPanel.Controls.Add(this.EmailTextBox);
+            this.ContactInfoPanel.Controls.Add(this.IdVkTextBox);
+            this.ContactInfoPanel.Controls.Add(this.BirthDayLabel);
+            this.ContactInfoPanel.Controls.Add(this.NameTextBox);
+            this.ContactInfoPanel.Controls.Add(this.PhoneLabel);
+            this.ContactInfoPanel.Controls.Add(this.PhoneTextBox);
+            this.ContactInfoPanel.Controls.Add(this.IdVkLabel);
+            this.ContactInfoPanel.Controls.Add(this.SernameTextBox);
+            this.ContactInfoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContactInfoPanel.Location = new System.Drawing.Point(0, 0);
+            this.ContactInfoPanel.Name = "ContactInfoPanel";
+            this.ContactInfoPanel.Size = new System.Drawing.Size(465, 349);
+            this.ContactInfoPanel.TabIndex = 16;
             // 
-            // panel3
+            // TodaysBirthdaysPanel
             // 
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.BirthdaysLabel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 349);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(465, 101);
-            this.panel3.TabIndex = 16;
+            this.TodaysBirthdaysPanel.Controls.Add(this.TodaysBirthdaysPictureBox);
+            this.TodaysBirthdaysPanel.Controls.Add(this.BirthdayContactLabel);
+            this.TodaysBirthdaysPanel.Controls.Add(this.BirthdaysLabel);
+            this.TodaysBirthdaysPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TodaysBirthdaysPanel.Location = new System.Drawing.Point(0, 349);
+            this.TodaysBirthdaysPanel.Name = "TodaysBirthdaysPanel";
+            this.TodaysBirthdaysPanel.Size = new System.Drawing.Size(465, 101);
+            this.TodaysBirthdaysPanel.TabIndex = 16;
             // 
-            // pictureBox4
+            // TodaysBirthdaysPictureBox
             // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 101);
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
+            this.TodaysBirthdaysPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TodaysBirthdaysPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.TodaysBirthdaysPictureBox.Name = "TodaysBirthdaysPictureBox";
+            this.TodaysBirthdaysPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.TodaysBirthdaysPictureBox.TabIndex = 15;
+            this.TodaysBirthdaysPictureBox.TabStop = false;
             // 
-            // label3
+            // BirthdayContactLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(106, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "label1";
+            this.BirthdayContactLabel.AutoSize = true;
+            this.BirthdayContactLabel.Location = new System.Drawing.Point(106, 30);
+            this.BirthdayContactLabel.Name = "BirthdayContactLabel";
+            this.BirthdayContactLabel.Size = new System.Drawing.Size(35, 13);
+            this.BirthdayContactLabel.TabIndex = 8;
+            this.BirthdayContactLabel.Text = "label1";
             // 
             // BirthdaysLabel
             // 
@@ -326,8 +326,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.panel2);
-            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.ContactInfoPanel);
+            this.panel4.Controls.Add(this.TodaysBirthdaysPanel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(281, 0);
             this.panel4.Name = "panel4";
@@ -340,21 +340,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 450);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ContactListPanel);
             this.Name = "MainForm";
             this.Text = "ContactsApp";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ContactListPanel.ResumeLayout(false);
+            this.ContactListPanel.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EditContactPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteContactPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddContactPictureBox)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.ContactInfoPanel.ResumeLayout(false);
+            this.ContactInfoPanel.PerformLayout();
+            this.TodaysBirthdaysPanel.ResumeLayout(false);
+            this.TodaysBirthdaysPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TodaysBirthdaysPictureBox)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -374,15 +374,15 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label SernameLabel;
         private System.Windows.Forms.DateTimePicker BirthdayDateTimePicker;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ContactListPanel;
         private System.Windows.Forms.TextBox FindTextBox;
         private System.Windows.Forms.Label FindLabel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel ContactInfoPanel;
+        private System.Windows.Forms.Panel TodaysBirthdaysPanel;
         private System.Windows.Forms.ListBox ContactsListBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label BirthdayContactLabel;
         private System.Windows.Forms.Label BirthdaysLabel;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox TodaysBirthdaysPictureBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox DeleteContactPictureBox;
         private System.Windows.Forms.PictureBox EditContactPictureBox;
