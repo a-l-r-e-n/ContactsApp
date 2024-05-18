@@ -2,31 +2,30 @@
 using System;
 using System.IO;
 
-
 namespace ContactsApp
 {
     /// <summary>
-    /// Менеджер для работы с файлами.
+    /// Описывает менеджер проекта
     /// </summary>
     public class ProjectManager
     {
         /// <summary>
-        /// Имя файла.
+        /// Имя файла
         /// </summary>
         private static string _fileName = @"\ContactsApp.txt";
 
         /// <summary>
-        /// Путь к AppData.
+        /// Путь к AppData
         /// </summary>
         private static string _appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
         /// <summary>
-        /// Путь к папке сохранения.
+        /// Путь к папке сохранения
         /// </summary>
         private static string _path = $@"{_appData}\ContactsApp";
 
         /// <summary>
-        /// Возвращает путь к папке сохранения.
+        /// Возвращает путь к папке сохранения
         /// </summary>
         public string Path
         {
@@ -37,7 +36,7 @@ namespace ContactsApp
         }
 
         /// <summary>
-        /// Возвращает имя файла.
+        /// Возвращает имя файла
         /// </summary>
         public string FileName
         {
@@ -48,7 +47,7 @@ namespace ContactsApp
         }
 
         /// <summary>
-        /// Сохранить данные в файл.
+        /// Сохраняет данные в файл
         /// </summary>
         /// <param name="project"></param>
         public void SaveProject(Project project)
@@ -62,7 +61,7 @@ namespace ContactsApp
         }
 
         /// <summary>
-        /// Загрузить данные из файла.
+        /// Загружает данные из файла
         /// </summary>
         /// <returns></returns>
         public Project LoadProject()
@@ -84,7 +83,4 @@ namespace ContactsApp
             }
         }
     }
-
 }
-
-

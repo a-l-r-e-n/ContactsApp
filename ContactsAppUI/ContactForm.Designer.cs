@@ -53,6 +53,7 @@
             this.okButton.TabIndex = 1;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // cancelButton
             // 
@@ -63,6 +64,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // SernameTextBox
             // 
@@ -191,6 +193,7 @@
             this.Controls.Add(this.BirthDayLabel);
             this.Name = "ContactForm";
             this.Text = "Add/Edit contact";
+            this.Load += new System.EventHandler(this.ContactForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

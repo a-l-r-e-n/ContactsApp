@@ -1,35 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactsApp
 {
     /// <summary>
-    /// Описывает проект.
+    /// Описывает проект
     /// </summary>
     public class Project
     {
         /// <summary>
-        /// Возвращает или задаёт контакты.
+        /// Список контактов в проекте
         /// </summary>
-        public List<Contact> Contacts { get; set; }
+        public List<Contact> Contacts = new List<Contact>();
 
         /// <summary>
-        /// Создаёт экземпляр класса <see cref="Project"/>.
+        /// Сортирует список по полному имени
         /// </summary>
-        public Project()
+        /// <returns>Отсортированный список</returns>
+        public List<Contact> SortBySername()
         {
-            Contacts = new List<Contact>();
+            return Contacts.OrderBy(c => c.Sername).ToList();
         }
 
+        /*
         /// <summary>
-        /// Создаёт экземпляр класса <see cref="Project"/> принимая список.
+        /// Находит контакты у которых сегодня день рождения
         /// </summary>
-        public Project(List<Contact> contacts)
+        /// <returns>Список именинников</returns>
+        public List<Contact> FindBirthdayContact(DateTime today)
         {
-            Contacts = contacts;
+            List<Contact> result = new List<Contact>();
+            foreach (Contact contact in Contacts)
+            {
+                if ((contact.DateOfBirth.Month == today.Month) &&
+                    (contact.DateOfBirth.Day == today.Day))
+                {
+                    result.Add(contact);
+                }
+            }
+            return result;
         }
+        */
+        /// <summary>
+        /// Выполняет поиск по подстроке имени, номера или email'а
+        /// </summary>
+        /// <param name="substring">Подстрока имени, номера или email'а</param>
+        /// <returns>Список найденных контактов</returns>
+        public List<Contact> FindContact(string substring)
+        {
+            if (substring == "")
+            {
+                return Contacts;
+            }
+            List<Contact> result = new List<Contact>();
+            foreach (Contact contact in Contacts)
+            {
+                if (contact.Sername.Contains(substring) ||
+                    //contact.PhoneNumber.Contains(substring) ||
+                    contact.Email.Contains(substring))
+                {
+                    result.Add(contact);
+                }
+            }
+            return result;
+        }
+
     }
 }
