@@ -32,7 +32,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.SernameTextBox = new System.Windows.Forms.TextBox();
             this.IdVkLabel = new System.Windows.Forms.Label();
-            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.BirthDayLabel = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.SernameLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
+            this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // okButton
@@ -74,6 +74,7 @@
             this.SernameTextBox.Name = "SernameTextBox";
             this.SernameTextBox.Size = new System.Drawing.Size(348, 20);
             this.SernameTextBox.TabIndex = 15;
+            this.SernameTextBox.TextChanged += new System.EventHandler(this.SernameTextBox_TextChanged);
             // 
             // IdVkLabel
             // 
@@ -83,15 +84,6 @@
             this.IdVkLabel.Size = new System.Drawing.Size(43, 13);
             this.IdVkLabel.TabIndex = 5;
             this.IdVkLabel.Text = "Vk.com";
-            // 
-            // PhoneTextBox
-            // 
-            this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(74, 92);
-            this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(348, 20);
-            this.PhoneTextBox.TabIndex = 14;
             // 
             // PhoneLabel
             // 
@@ -110,6 +102,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(348, 20);
             this.NameTextBox.TabIndex = 13;
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // BirthDayLabel
             // 
@@ -128,6 +121,7 @@
             this.IdVkTextBox.Name = "IdVkTextBox";
             this.IdVkTextBox.Size = new System.Drawing.Size(348, 20);
             this.IdVkTextBox.TabIndex = 12;
+            this.IdVkTextBox.TextChanged += new System.EventHandler(this.VKTextBox_TextChanged);
             // 
             // EmailTextBox
             // 
@@ -137,6 +131,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(348, 20);
             this.EmailTextBox.TabIndex = 11;
+            this.EmailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_TextChanged);
             // 
             // BirthdayDateTimePicker
             // 
@@ -144,6 +139,7 @@
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
             this.BirthdayDateTimePicker.Size = new System.Drawing.Size(126, 20);
             this.BirthdayDateTimePicker.TabIndex = 4;
+            this.BirthdayDateTimePicker.ValueChanged += new System.EventHandler(this.DateOfBirthTimePicker_ValueChanged);
             // 
             // NameLabel
             // 
@@ -171,6 +167,16 @@
             this.EmailLabel.Size = new System.Drawing.Size(35, 13);
             this.EmailLabel.TabIndex = 6;
             this.EmailLabel.Text = "E-mail";
+            // 
+            // PhoneTextBox
+            // 
+            this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PhoneTextBox.Location = new System.Drawing.Point(74, 92);
+            this.PhoneTextBox.Name = "PhoneTextBox";
+            this.PhoneTextBox.Size = new System.Drawing.Size(348, 20);
+            this.PhoneTextBox.TabIndex = 14;
+            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // ContactForm
             // 
@@ -204,7 +210,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox SernameTextBox;
         private System.Windows.Forms.Label IdVkLabel;
-        private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label BirthDayLabel;
@@ -214,5 +219,6 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label SernameLabel;
         private System.Windows.Forms.Label EmailLabel;
+        private System.Windows.Forms.TextBox PhoneTextBox;
     }
 }

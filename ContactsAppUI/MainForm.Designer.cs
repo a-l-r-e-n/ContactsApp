@@ -74,6 +74,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(374, 20);
             this.EmailTextBox.TabIndex = 11;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // IdVkTextBox
             // 
@@ -83,6 +84,7 @@
             this.IdVkTextBox.Name = "IdVkTextBox";
             this.IdVkTextBox.Size = new System.Drawing.Size(374, 20);
             this.IdVkTextBox.TabIndex = 12;
+            this.IdVkTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdVkTextBox_KeyPress);
             // 
             // NameTextBox
             // 
@@ -92,6 +94,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(374, 20);
             this.NameTextBox.TabIndex = 13;
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // PhoneTextBox
             // 
@@ -101,6 +104,7 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(374, 20);
             this.PhoneTextBox.TabIndex = 14;
+            this.PhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // SernameTextBox
             // 
@@ -110,6 +114,7 @@
             this.SernameTextBox.Name = "SernameTextBox";
             this.SernameTextBox.Size = new System.Drawing.Size(374, 20);
             this.SernameTextBox.TabIndex = 15;
+            this.SernameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SernameTextBox_KeyPress);
             // 
             // IdVkLabel
             // 
@@ -344,6 +349,7 @@
             this.Controls.Add(this.ContactListPanel);
             this.Name = "MainForm";
             this.Text = "ContactsApp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ContactListPanel.ResumeLayout(false);
             this.ContactListPanel.PerformLayout();

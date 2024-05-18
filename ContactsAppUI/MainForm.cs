@@ -94,7 +94,7 @@ namespace ContactsAppUI
             {
                 return;
             }
-            DialogResult result = MessageBox.Show($"Вы действительно хотите удалить " +
+            DialogResult result = MessageBox.Show($"Do you really want to remove " +
                 $"{ContactsListBox.SelectedItem}?", "Confirmation", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
@@ -154,7 +154,7 @@ namespace ContactsAppUI
             SernameTextBox.Text = contact.Sername;
             NameTextBox.Text = contact.Name;
             EmailTextBox.Text = contact.Email;
-            PhoneTextBox.Text = contact.PhoneNumber.ToString();
+            PhoneTextBox.Text = contact.PhoneNumber.Number.ToString();
             BirthdayDateTimePicker.Value = contact.BirthDay;
             IdVkTextBox.Text = contact.IdVK;
         }
@@ -244,6 +244,58 @@ namespace ContactsAppUI
             {
                 UpdateSelectedContact(ContactsListBox.SelectedIndex);
             }
+        }
+
+
+        /// <summary>
+        /// Запрещает редактирование текстового поля с фамилией
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SernameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+
+        /// <summary>
+        /// Запрещает редактирование текстового поля с именем
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Запрещает редактирование текстового поля с электронной почтой
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Запрещает редактирование текстового поля с номером телефона
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PhoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Запрещает редактирование текстового поля с ссылкой на ВК
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IdVkTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
