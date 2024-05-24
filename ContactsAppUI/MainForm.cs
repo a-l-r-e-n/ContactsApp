@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using ContactsApp;
+
 
 namespace ContactsAppUI
 {
@@ -44,7 +38,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обновляет список контактов на форме
+        /// Обновляет список контактов на форме.
         /// </summary>
         private void UpdateListBox()
         {
@@ -56,15 +50,13 @@ namespace ContactsAppUI
                 ContactsListBox.Items.Add(item.Sername);
             }
 
-            //string birthdayPeople = "";
-            //foreach (var item in _project.FindBirthdayContact(_todayData))
-            //{
-            //    birthdayPeople += item.FullName + ", ";
-            //}
-            //BirthdaySurnamesLabel.Text = birthdayPeople;
+            string birthdayPeople = "";
+            foreach (var item in _project.FindBirthdayContact(_todayData))
+            {
+                birthdayPeople += item.Sername + " "+ item.Name + ", ";
+            }
+            BirthdayContactLabel.Text = birthdayPeople;
         }
-
-
 
         /// <summary>
         /// Добавляет контакт в проект.
@@ -159,17 +151,12 @@ namespace ContactsAppUI
             IdVkTextBox.Text = contact.IdVK;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
-        /// Обрабатывает нажатие кнопки добавления контакта
+        /// Обрабатывает нажатие кнопки добавления контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void addContactPictureBox_Click(object sender, EventArgs e)
+        private void AddContactPictureBox_Click(object sender, EventArgs e)
         {
 
             AddContact();
@@ -178,11 +165,11 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает нажатие кнопки редактирования контакта
+        /// Обрабатывает нажатие кнопки редактирования контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void editContactPictureBox_Click(object sender, EventArgs e)
+        private void EditContactPictureBox_Click(object sender, EventArgs e)
         {
             int index = ContactsListBox.SelectedIndex;
             EditContact(index);
@@ -192,11 +179,11 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает нажатие кнопки удаления контакта
+        /// Обрабатывает нажатие кнопки удаления контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void deleteContactPictureBox_Click(object sender, EventArgs e)
+        private void DeleteContactPictureBox_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
             UpdateListBox();
@@ -204,7 +191,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает событие закрытия формы
+        /// Обрабатывает событие закрытия формы.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -220,7 +207,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Выполняет поиск контакта по подстроке
+        /// Выполняет поиск контакта по подстроке.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -230,7 +217,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает событие выбора контакта из списка на форме
+        /// Обрабатывает событие выбора контакта из списка на форме.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -248,7 +235,7 @@ namespace ContactsAppUI
 
 
         /// <summary>
-        /// Запрещает редактирование текстового поля с фамилией
+        /// Запрещает редактирование текстового поля с фамилией.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -259,7 +246,7 @@ namespace ContactsAppUI
 
 
         /// <summary>
-        /// Запрещает редактирование текстового поля с именем
+        /// Запрещает редактирование текстового поля с именем.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -269,7 +256,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Запрещает редактирование текстового поля с электронной почтой
+        /// Запрещает редактирование текстового поля с электронной почтой.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -279,7 +266,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Запрещает редактирование текстового поля с номером телефона
+        /// Запрещает редактирование текстового поля с номером телефона.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -289,7 +276,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Запрещает редактирование текстового поля с ссылкой на ВК
+        /// Запрещает редактирование текстового поля с ссылкой на ВК.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

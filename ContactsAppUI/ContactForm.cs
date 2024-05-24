@@ -15,45 +15,49 @@ namespace ContactsAppUI
     public partial class ContactForm : Form
     {
         /// <summary>
-        /// Цвет отсутствия ошибок
+        /// Цвет отсутствия ошибок.
         /// </summary>
         private Color _noErrorColor = Color.White;
 
         /// <summary>
-        /// Цвет ошибки
+        /// Цвет ошибки.
         /// </summary>
         private Color _errorColor = Color.LightPink;
 
         /// <summary>
-        /// Переменная для вывода ошибок при изменении значения фамилии контакта
+        /// Переменная для вывода ошибок при изменении значения фамилии контакта.
         /// </summary>
         private string _sernameError;
 
         /// <summary>
-        /// Переменная для вывода ошибок при изменении значения имени контакта
+        /// Переменная для вывода ошибок при изменении значения имени контакта.
         /// </summary>
         private string _nameError;
 
         /// <summary>
-        /// Переменная для вывода ошибок при изменении значения почты контакта
+        /// Переменная для вывода ошибок при изменении значения почты контакта.
         /// </summary>
         private string _emailError;
 
         /// <summary>
-        /// Переменная для вывода ошибок при изменении значения номера телефона контакта
+        /// Переменная для вывода ошибок при изменении значения номера телефона контакта.
         /// </summary>
         private string _phoneNumberError;
 
         /// <summary>
-        /// Переменная для вывода ошибок при изменении значения даты рождения контакта
+        /// Переменная для вывода ошибок при изменении значения даты рождения контакта.
         /// </summary>
         private string _birthDayError;
 
         /// <summary>
-        /// Переменная для вывода ошибок при изменении значения ссылки на ВК контакта
+        /// Переменная для вывода ошибок при изменении значения ссылки на ВК контакта.
         /// </summary>
         private string _idVKError;
 
+
+        /// <summary>
+        /// Очищает форму.
+        /// </summary>
         private void ClearTextBoxes()
         {
             SernameTextBox.Text = "";
@@ -70,13 +74,13 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Объект контакта, содержащий основную информацию о нём
+        /// Объект контакта, содержащий основную информацию о нём.
         /// </summary>
         private Contact _contact = new Contact("EmptySername", "EmptyName",
             new PhoneNumber(79131232334), DateTime.Today, "qwe@gmail.com", "1111121");
 
         /// <summary>
-        /// Возвращает или задаёт данные о контакте
+        /// Возвращает или задаёт данные о контакте.
         /// </summary>
         public Contact Contact
         {
@@ -89,15 +93,15 @@ namespace ContactsAppUI
                 _contact = value;
             }
         }
+
         public ContactForm()
         {
             InitializeComponent();
             ClearTextBoxes();
         }
 
-
         /// <summary>
-        /// Проверяет данные на наличие ошибок ввода
+        /// Проверяет данные на наличие ошибок ввода.
         /// </summary>
         /// <returns></returns>
         private bool CheckFormOnErrors()
@@ -133,7 +137,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обновляет информацию о контакте в полях на форме
+        /// Обновляет информацию о контакте в полях на форме.
         /// </summary>
         private void UpdateForm()
         {
@@ -146,7 +150,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обновляет данные контакта
+        /// Обновляет данные контакта.
         /// </summary>
         private void UpdateContact()
         {
@@ -159,7 +163,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает нажатие кнопки ОК на форме
+        /// Обрабатывает нажатие кнопки ОК на форме.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -173,7 +177,7 @@ namespace ContactsAppUI
             }
         }
         /// <summary>
-        /// Обрабатывает нажатие кнопки отмены на форме
+        /// Обрабатывает нажатие кнопки отмены на форме.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -183,7 +187,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает событие изменения значения поля с фамилией контакта
+        /// Обрабатывает событие изменения значения поля с фамилией контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -203,7 +207,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает событие изменения значения поля с именем контакта
+        /// Обрабатывает событие изменения значения поля с именем контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -221,9 +225,9 @@ namespace ContactsAppUI
                 _nameError = exception.Message;
             }
         }
-        
+
         /// <summary>
-        /// Обрабатывает событие изменения значения поля с номером телефона контакта
+        /// Обрабатывает событие изменения значения поля с номером телефона контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -231,7 +235,7 @@ namespace ContactsAppUI
         {
             try
             {
-                _contact.PhoneNumber = new PhoneNumber (Convert.ToInt64(PhoneTextBox.Text));
+                _contact.PhoneNumber = new PhoneNumber(Convert.ToInt64(PhoneTextBox.Text));
                 PhoneTextBox.BackColor = _noErrorColor;
                 _nameError = "";
             }
@@ -241,8 +245,9 @@ namespace ContactsAppUI
                 _nameError = exception.Message;
             }
         }
+
         /// <summary>
-        /// Обрабатывает событие изменения значения поля с почтой контакта
+        /// Обрабатывает событие изменения значения поля с почтой контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -262,7 +267,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обрабатывает событие изменения значения поля с ссылкой на ВК контакта
+        /// Обрабатывает событие изменения значения поля с ссылкой на ВК контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -281,7 +286,7 @@ namespace ContactsAppUI
             }
         }
         /// <summary>
-        /// Обрабатывает событие изменения значения поля с датой рождения контакта
+        /// Обрабатывает событие изменения значения поля с датой рождения контакта.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

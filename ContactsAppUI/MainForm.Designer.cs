@@ -220,7 +220,7 @@
             this.EditContactPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.EditContactPictureBox.TabIndex = 15;
             this.EditContactPictureBox.TabStop = false;
-            this.EditContactPictureBox.Click += new System.EventHandler(this.addContactPictureBox_Click);
+            this.EditContactPictureBox.Click += new System.EventHandler(this.EditContactPictureBox_Click);
             // 
             // DeleteContactPictureBox
             // 
@@ -231,7 +231,7 @@
             this.DeleteContactPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.DeleteContactPictureBox.TabIndex = 15;
             this.DeleteContactPictureBox.TabStop = false;
-            this.DeleteContactPictureBox.Click += new System.EventHandler(this.deleteContactPictureBox_Click);
+            this.DeleteContactPictureBox.Click += new System.EventHandler(this.DeleteContactPictureBox_Click);
             // 
             // AddContactPictureBox
             // 
@@ -242,7 +242,7 @@
             this.AddContactPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.AddContactPictureBox.TabIndex = 15;
             this.AddContactPictureBox.TabStop = false;
-            this.AddContactPictureBox.Click += new System.EventHandler(this.addContactPictureBox_Click);
+            this.AddContactPictureBox.Click += new System.EventHandler(this.AddContactPictureBox_Click);
             // 
             // ContactsListBox
             // 
@@ -262,6 +262,7 @@
             this.FindTextBox.Name = "FindTextBox";
             this.FindTextBox.Size = new System.Drawing.Size(222, 20);
             this.FindTextBox.TabIndex = 13;
+            this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
             // 
             // FindLabel
             // 
@@ -350,7 +351,6 @@
             this.Name = "MainForm";
             this.Text = "ContactsApp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ContactListPanel.ResumeLayout(false);
             this.ContactListPanel.PerformLayout();
             this.panel5.ResumeLayout(false);
