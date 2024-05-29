@@ -106,14 +106,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Icon.png" />
     <None Include="Resourses\icons8-birth-date-50.png" />
-    <None Include="Resources\Icon.ico" />
     <None Include="Resourses\icons8-remove-50.png" />
     <None Include="Resourses\icons8-create-50.png" />
     <None Include="Resourses\icons8-add-50.png" />
-    <Content Include="Resourses\icons8-birth-date-100.png" />
-    <Content Include="Resourses\icons8-contacts-480.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
